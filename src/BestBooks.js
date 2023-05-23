@@ -15,6 +15,8 @@ class BestBooks extends React.Component {
   getBooks = async () => {
     try {
       let results = await axios.get(`${SERVER}/books`);
+      
+    console.log(results)
       this.setState({
         books: results.data
       })
@@ -30,7 +32,7 @@ class BestBooks extends React.Component {
 
   render() {
     // <p key={book._id}>{book.title} is {book.status}</p>
-
+    // console.log('!!!!!!', this.state.books);
     return (
       <>
         <header>
@@ -39,27 +41,25 @@ class BestBooks extends React.Component {
         <main>
 
           {this.state.books.length > 0 ? (
-            (
-              <Carousel>
+            
+               <Carousel>
                 {this.state.books.map((book) => (
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="holder.js/800x400?text=First slide&bg=373940"
+                      src="stack.jpg"
                       alt="First slide"
                     />
                     <Carousel.Caption>
-                      <h3>First slide label</h3>
+                      <h3>{book.title}</h3>
                       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                   </Carousel.Item>
 
-                ))
-                }
-              </Carousel>
-            )
+                ))}
+               </Carousel>
           ) : (<h2> No books found!</h2>)
-          }
+          } 
         </main>
       </>
     )
