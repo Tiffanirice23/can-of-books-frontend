@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
 import BookFormModal from './BookFormModal';
+import './BestBooks.css';
 import { Button } from 'react-bootstrap';
 
 let SERVER = process.env.REACT_APP_SERVER;
@@ -41,6 +42,7 @@ class BestBooks extends React.Component {
       console.log('OOP THERE IS AN ERROR: ', error.response.data)
     }
   }
+
   handleBookSubmit = (event) => {
     event.preventDefault();
     // console.log(event.target.title.value);
@@ -54,7 +56,9 @@ class BestBooks extends React.Component {
     this.postBook(newBook);
   }
 
-  deleteBook = async (id) => {
+  deleteBook = async (book) => {
+    let id = book._id
+    console.log(id);
     try {
       let url = `${SERVER}/books/${id}`;
       await axios.delete(url);
@@ -89,22 +93,22 @@ class BestBooks extends React.Component {
     // console.log('!!!!!!', this.state.books);
     return (
       <>
-        <header>
+        <header className="subHead">
           <BookFormModal
             show={this.state.isModalDisplaying}
             handleClose={this.handleCloseModal}
             handleShow={this.handleShowModal}
             handleBookSubmit={this.handleBookSubmit}
           />
-          <Button variant="primary" onClick={this.handleShowModal} > Add Book!</Button>
+          <Button variant="primary" className="addButton" onClick={this.handleShowModal} > Add Book! </Button>
         </header>
         <main>
 
           {this.state.books.length > 0 ? (
 
             <Carousel>
-              {this.state.books.map((book) => (
-                <Carousel.Item>
+              {this.state.books.map((book, idx) => (
+                <Carousel.Item key={idx}>
                   <img
                     className="d-block w-100"
                     src="stack.jpg"
@@ -112,7 +116,8 @@ class BestBooks extends React.Component {
                   />
                   <Carousel.Caption>
                     <h3>{book.title}</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <p>{book.description}</p>
+                    <Button variant="primary" onClick={() => this.deleteBook(book)} > Delete Book </Button>
                   </Carousel.Caption>
                 </Carousel.Item>
 
