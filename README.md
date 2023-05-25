@@ -1,45 +1,31 @@
 # Building CRUD apps with MongoDB
 
-**Author**: Team Member Names Goes Here
+**Author**: Tiffani Rice and Anthony Sinitsa
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
-
-## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-
-## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-
-## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-
-## Estimates
-<!-- See below -->
+This program allows users to add, edit, and delete books to a rotating boostrap carousel modal.
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+BIG THANKS TO SHEYNA and the CodeFellows TAs!
 
-## Name of feature: ________________________________
+## Name of feature: ____Update a Resource____________
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: __3 hrs___
 
-Start time: _____
+Start time: _2:00____
 
-Finish time: _____
+Finish time: _4:30____
 
-Actual time needed to complete: _____
+Actual time needed to complete: __2.5 hrs___
 
 
 ## Logistical
 
 ### What hours will you be available to communicate?
  
- 1:30 to 6:00 (after 6, Tiffani is a bit busy; no later than 9)
+ 1:30 to 6:00 (after 6, Tiffani is a bit busy)
 
 ### What platform will you use to communicate (ie. Slack, phone …)?
 
@@ -85,4 +71,4 @@ Communicate and don’t work without the other person present (depending on the 
 
 ### How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
 
-If one person understand a concept more, then explain it to the other! Don’t take things personally.
+If one person understands a concept more, then explain it to the other! Don’t take things personally.
