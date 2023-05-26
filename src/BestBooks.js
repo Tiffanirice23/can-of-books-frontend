@@ -5,6 +5,7 @@ import BookFormModal from './BookFormModal';
 import UpdateBook from './UpdateBook';
 import './BestBooks.css';
 import { Button } from 'react-bootstrap';
+import { withAuth0 } from '@auth0/auth0-react';
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -21,13 +22,17 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
-      let results = await axios.get(`${SERVER}/books`);
+      if (this.props.auth0.isAuthenticated) {
+        const res = await this.props.auth0.getIdTokenClaims();
+        const jwt = res.__raw;
+        console.log(jwt);
 
-      console.log(results)
-      this.setState({
-        books: results.data
-      })
-      console.log(this.state.books);
+        let results = await axios.get(`${SERVER}/books`);
+        this.setState({
+          books: results.data
+        })
+        console.log(this.state.books);
+      }
     } catch (error) {
       console.log('we have an error: ', error.response.data);
     }
@@ -119,6 +124,7 @@ class BestBooks extends React.Component {
   }
 
   render() {
+    console.log(this.props.auth0.user);
     // <p key={book._id}>{book.title} is {book.status}</p>
     // console.log('!!!!!!', this.bookToUpdate);
     return (
@@ -169,4 +175,4 @@ class BestBooks extends React.Component {
   }
 }
 
-export default BestBooks;
+export default withAuth0(BestBooks);
