@@ -5,7 +5,7 @@ class UpdateBook extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('!!!!!' , e.target);
+    console.log('!!!!!', e.target);
     let bookToUpdate = {
       title: e.target.title.value || this.props.book.title,
       description: e.target.description.value || this.props.book.description,
@@ -14,7 +14,7 @@ class UpdateBook extends React.Component {
       __v: this.props.book.__v
     };
     this.props.putBook(bookToUpdate)
-  
+
   }
   render() {
 
@@ -41,7 +41,7 @@ class UpdateBook extends React.Component {
                       <Form.Group controlId="status">
                         <Form.Check type="checkbox" label="Have You Read This" />
                       </Form.Group>
-                      <Button type="submit">Update Book! </Button>
+                      <Button type="submit" onClick={this.props.handleClose}>Update Book! </Button>
                     </Form>
                   ) : <h1> That does not exist</h1>
               }

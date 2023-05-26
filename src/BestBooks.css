@@ -5,3 +5,8 @@
 .subHead{
   display: flex;
 }
+
+.carousel-img {
+  height: 600px; /* Set the desired height */
+  object-fit: cover; 
+}

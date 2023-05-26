@@ -81,10 +81,10 @@ class BestBooks extends React.Component {
       let updatedBook = await axios.put(url, bookToUpdate);
       let updatedBooks = this.state.books.map(existingBook => {
         return existingBook._id === bookToUpdate._id
-        ? updatedBook.data
-        : existingBook;
+          ? updatedBook.data
+          : existingBook;
       });
-      this.setState ({
+      this.setState({
         books: updatedBooks,
         // showUpdateModal: true,
       })
@@ -113,7 +113,7 @@ class BestBooks extends React.Component {
       selectedBook: book
     });
   }
-  
+
   componentDidMount() {
     this.getBooks();
   }
@@ -130,7 +130,7 @@ class BestBooks extends React.Component {
             handleShow={this.handleShowModal}
             handleBookSubmit={this.handleBookSubmit}
           />
-           <UpdateBook
+          <UpdateBook
             show={this.state.showUpdateModal}
             handleClose={this.handleCloseModal}
             // handleShow={this.handleShowModal}
@@ -147,7 +147,7 @@ class BestBooks extends React.Component {
               {this.state.books.map((value, idx) => (
                 <Carousel.Item key={idx}>
                   <img
-                    className="d-block w-100"
+                    className="d-block w-100 carousel-img"
                     src="stack.jpg"
                     alt="First slide"
                   />
