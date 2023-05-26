@@ -22,10 +22,12 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
+      console.log(this.props.auth0.isAuthenticated);
       if (this.props.auth0.isAuthenticated) {
         const res = await this.props.auth0.getIdTokenClaims();
         const jwt = res.__raw;
         console.log(jwt);
+        // await(() => setTimeout(console.log(jwt), 5000));
 
         let results = await axios.get(`${SERVER}/books`);
         this.setState({
@@ -119,7 +121,7 @@ class BestBooks extends React.Component {
     });
   }
 
-  componentDidMount() {
+  componentDidMount = async() => { 
     this.getBooks();
   }
 
