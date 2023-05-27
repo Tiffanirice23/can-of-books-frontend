@@ -1,5 +1,6 @@
 .addButton {
   margin: .5rem auto;
+
 }
 
 .subHead{
@@ -7,6 +8,6 @@
 }
 
 .carousel-img {
-  height: 600px; /* Set the desired height */
+  height: 500px; /* Set the desired height */
   object-fit: cover; 
 }

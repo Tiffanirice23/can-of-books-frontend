@@ -18,23 +18,23 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1>Auth0</h1>
-        {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
-        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please login</h2>}
+            <h1>{this.props.auth0?.user?.given_name || 'Hey'}, welcome to your bookcase!</h1>
         <Router>
           <Header />
           <Routes>
             <Route
               exact path="/"
               element={<BestBooks />}
-            />
+              />
             <Route
               path="/about"
               element={<About />}
-            />
+              />
           </Routes>
           <Footer />
         </Router>
+              {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
+              {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please login</h2>}
       </>
     )
   }

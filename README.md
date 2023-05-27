@@ -1,4 +1,4 @@
-# Building CRUD apps with MongoDB
+# User Authentication with Auth0
 
 **Author**: Tiffani Rice and Anthony Sinitsa
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
@@ -10,15 +10,15 @@ This program allows users to add, edit, and delete books to a rotating boostrap 
 
 BIG THANKS TO SHEYNA and the CodeFellows TAs!
 
-## Name of feature: ____Update a Resource____________
+## Name of feature: ____User Authentication with Auth0____________
 
 Estimate of time needed to complete: __3 hrs___
 
-Start time: _2:00____
+Start time: _3:30____
 
-Finish time: _4:30____
+Finish time: _5:30____
 
-Actual time needed to complete: __2.5 hrs___
+Actual time needed to complete: __2 hrs___
 
 
 ## Logistical
