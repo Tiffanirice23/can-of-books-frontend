@@ -13,17 +13,17 @@ class BookFormModal extends React.Component {
             <Container>
               <Form onSubmit={this.props.handleBookSubmit}>
                 <Form.Group controlId="title">
-                  <Form.Label> Title</Form.Label>
+                  <Form.Label> Title and Author</Form.Label>
                   <Form.Control type="text" />
                 </Form.Group>
                 <Form.Group controlId="description">
-                  <Form.Label> Description</Form.Label>
+                  <Form.Label> Book Description</Form.Label>
                   <Form.Control type="text" />
                 </Form.Group>
                 <Form.Group controlId="status">
-                  <Form.Check type="checkbox" label="Have You Read This" />
+                  <Form.Check type="checkbox" label="I've Read This" />
                 </Form.Group>
-                <Button type="submit" onClick={this.props.handleClose}>Add Book! </Button>
+                <Button type="submit" onClick={this.props.handleClose}>Add my book! </Button>
               </Form>
             </Container>
           </Modal.Body>
