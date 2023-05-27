@@ -22,7 +22,6 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
-      console.log(this.props.auth0.isAuthenticated);
       if (this.props.auth0.isAuthenticated) {
         const res = await this.props.auth0.getIdTokenClaims();
         const jwt = res.__raw;
@@ -121,8 +120,16 @@ class BestBooks extends React.Component {
     });
   }
 
+  componentDidUpdate = async(prevProps) => { 
+    if (!prevProps.auth0.isAuthenticated && this.props.auth0.isAuthenticated) {
+      this.getBooks();
+    }
+  }
+
   componentDidMount = async() => { 
-    this.getBooks();
+    if (this.props.auth0.isAuthenticated) {
+      this.getBooks();
+    }
   }
 
   render() {
