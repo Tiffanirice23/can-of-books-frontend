@@ -18,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-            <h1>Welcome to the community bookcase, {this.props.auth0?.user?.given_name || 'Hey'}!</h1>
+            <h1>Welcome to the community bookcase, {this.props.auth0?.user?.given_name || 'friend'}!</h1>
         <Router>
           <Header />
           <Routes>
