@@ -152,7 +152,7 @@ class BestBooks extends React.Component {
             putBook={this.putBook}
             book={this.state.selectedBook}
           />
-          <Button variant="primary" className="addButton" onClick={this.handleShowModal} > Add Book! </Button>
+          <Button variant="primary" className="addButton" onClick={this.handleShowModal} > Add a Recommendation! </Button>
         </header>
         <main>
 
@@ -169,8 +169,8 @@ class BestBooks extends React.Component {
                   <Carousel.Caption>
                     <h3>{value.title}</h3>
                     <p>{value.description}</p>
-                    <Button variant="primary" onClick={() => this.deleteBook(value)} > Delete Book </Button>
-                    <Button variant="secondary" onClick={() => this.handleUpdateModal(value)} > Update Book </Button>
+                    <Button variant="primary" onClick={() => this.deleteBook(value)} > Delete this Book </Button>
+                    <Button variant="secondary" onClick={() => this.handleUpdateModal(value)} > Update this Book </Button>
                   </Carousel.Caption>
                 </Carousel.Item>
 

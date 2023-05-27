@@ -41,7 +41,7 @@ class UpdateBook extends React.Component {
                       <Form.Group controlId="status">
                         <Form.Check type="checkbox" label="Have You Read This" />
                       </Form.Group>
-                      <Button type="submit" onClick={this.props.handleClose}>Update Book! </Button>
+                      <Button type="submit" onClick={this.props.handleClose}>Update this Book! </Button>
                     </Form>
                   ) : <h1> That does not exist</h1>
               }

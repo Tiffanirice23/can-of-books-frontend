@@ -18,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-            <h1>{this.props.auth0?.user?.given_name || 'Hey'}, welcome to your bookcase!</h1>
+            <h1>Welcome to the community bookcase, {this.props.auth0?.user?.given_name || 'Hey'}!</h1>
         <Router>
           <Header />
           <Routes>
@@ -31,10 +31,10 @@ class App extends React.Component {
               element={<About />}
               />
           </Routes>
-          <Footer />
-        </Router>
               {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
               {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please login</h2>}
+          <Footer />
+        </Router>
       </>
     )
   }
